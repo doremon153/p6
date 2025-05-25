@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alphanumeric Sorting</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+    </style>
+</head>
+<body>
+    <h1>Alphanumeric Sorting</h1>
+    <textarea id="inputList" placeholder="Enter elements separated by commas"></textarea>
+    <button onclick="sortAlphanumeric()">Sort</button>
+    <div id="result"></div>
+
+    <script>
+        function sortAlphanumeric() {
+            const elements = document.getElementById('inputList').value.split(',').map(item => item.trim());
+            elements.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+            document.getElementById('result').innerText = "Sorted List: " + elements.join(', ');
+        }
+    </script>
+</body>
+</html>
