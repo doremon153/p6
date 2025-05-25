@@ -8,16 +8,17 @@
 </head>
 <body>
     <h1>Alphanumeric Sorting</h1>
-    <textarea id="inputList" placeholder="Enter elements separated by commas"></textarea>
-    <button onclick="sortAlphanumeric()">Sort</button>
+    <input type = "text" id="inputList">
+    <button onclick="sort()">Sort</button>
     <div id="result"></div>
 
     <script>
-        function sortAlphanumeric() {
-            const elements = document.getElementById('inputList').value.split(',').map(item => item.trim());
-            elements.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
-            document.getElementById('result').innerText = "Sorted List: " + elements.join(', ');
-        }
-    </script>
+  function sort() {
+    let input = document.getElementById('inputList').value;
+    let list = input.split(',').map(x => x.trim());
+    list.sort(); // Simple sort
+    document.getElementById('result').innerText = "Sorted List: " + list.join(', ');
+  }
+</script>
 </body>
 </html>
